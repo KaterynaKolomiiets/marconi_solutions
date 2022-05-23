@@ -36,13 +36,13 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, './client/build')));
+//app.use(express.static(path.join(__dirname, './public')));
 // // app.use("/", (req, res) => {
 // //   res.sendFile(path.resolve(__dirname, "/client/build'", "index.html"));
 // // });
 
-app.use('/', indexRouter);
-app.use('/', fatturasRouter)
+app.use('/api', indexRouter);
+app.use('/api', fatturasRouter)
 
 
 
