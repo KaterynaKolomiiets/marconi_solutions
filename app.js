@@ -22,13 +22,9 @@ app.use(cookieParser());
 
 app.options("*", cors());
 
-
-
-
-
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:8080"],
+    origin: ["http://154.60.194.229:3000", "http://154.60.194.229:8080"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 204,
@@ -36,15 +32,8 @@ app.use(
   })
 );
 
-//app.use(express.static(path.join(__dirname, './public')));
-// // app.use("/", (req, res) => {
-// //   res.sendFile(path.resolve(__dirname, "/client/build'", "index.html"));
-// // });
-
 app.use('/api', indexRouter);
 app.use('/api', fatturasRouter)
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
